@@ -12,5 +12,10 @@ export default {
     },
     create: function(post) {
         return requester.post("/blogs", post);
+    },
+    byCategoryName: function(subcategory, category) {
+        return requester.get("/blogs/" + subcategory + "/" + category).then(blogs => {
+            return blogs;
+        });
     }
 };

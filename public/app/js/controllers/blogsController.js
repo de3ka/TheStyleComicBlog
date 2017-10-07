@@ -13,6 +13,17 @@ export default {
                 }));
             });
     },
+    allByCategoryName: function(context) {
+        let subcategory = context.params.subcategory;
+        let category = context.params.category;
+        Promise.all([data.byCategoryName(subcategory, category), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
+                    blogs: blogs
+                }));
+            });
+    },
     post: function(context) {
         templates.load("blog-create")
             .then(template => {
