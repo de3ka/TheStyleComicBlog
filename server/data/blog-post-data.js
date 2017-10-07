@@ -113,7 +113,7 @@ module.exports = function(BlogPost) {
         });
     }
 
-    function allWithPagination(pageNumber = 0, pageSize = 10) {
+    function allWithPagination(pageNumber = 0, pageSize = 11) {
         const getPage = new Promise((resolve, reject) => {
             BlogPost.find().sort({ 'postedOn': -1 })
                 .skip(pageNumber * pageSize)

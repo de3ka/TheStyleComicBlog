@@ -86,7 +86,7 @@ module.exports = function(data) {
 
         getAllBlogsPagination(req, res) {
             const page = +req.query.page || 0;
-            const size = +req.query.size || 10;
+            const size = +req.query.size || 11;
 
             data.blogData.allWithPagination(page, size)
                 .then(([blogs, pageCount]) => {
