@@ -13,8 +13,21 @@ export default {
     create: function(post) {
         return requester.post("/blogs", post);
     },
+    addComment: function(id, comment) {
+        return requester.post("/blogs/" + id, comment);
+    },
     byCategoryName: function(subcategory, category) {
         return requester.get("/blogs/" + subcategory + "/" + category).then(blogs => {
+            return blogs;
+        });
+    },
+    allCategoryName: function(category) {
+        return requester.get("/search/category/" + category).then(blogs => {
+            return blogs;
+        });
+    },
+    allSubcategoryName: function(subcategory) {
+        return requester.get("/search/subcategory/" + subcategory).then(blogs => {
             return blogs;
         });
     }

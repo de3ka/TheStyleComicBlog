@@ -29,6 +29,25 @@ export default {
                 }));
             });
     },
+    byId: function(context) {
+        let id = context.params.id;
+        Promise.all([data.byId(id), templates.load("single-blog")])
+            .then(function([blog, template]) {
+                let user = localStorage.getItem("user");
+                let newUser = JSON.parse(user);
+
+                context.$element().html(template(blog.blog));
+                $("#leave-reply-submit").on("click", function(ev) {
+                    ev.preventDefault();
+                    let comment = {
+                        content: $("#leave-reply-text").val(),
+                        postedBy: newUser.username || "Stranger"
+                    };
+                    data.addComment(id, comment);
+                    location.reload(true);
+                });
+            });
+    },
     post: function(context) {
         templates.load("blog-create")
             .then(template => {
@@ -58,6 +77,26 @@ export default {
                             context.redirect("#/home");
                         });
                 });
+            });
+    },
+    searchCategory: function(context) {
+        let category = context.params.category;
+        Promise.all([data.allCategoryName(category), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
+                    blogs: blogs
+                }));
+            });
+    },
+    searchSubCategory: function(context) {
+        let subcategory = context.params.subcategory;
+        Promise.all([data.allSubcategoryName(subcategory), templates.load("list-blogs-category")])
+            .then(function([blogs, template]) {
+                console.log(blogs);
+                context.$element().html(template({
+                    blogs: blogs
+                }));
             });
     }
 };
