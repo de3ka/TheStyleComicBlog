@@ -39,6 +39,23 @@ module.exports = function(data) {
                 }).catch((err) => res.status(500).json(err, "Blog not found"));
         },
 
+        addComment(req, res) {
+            let comment = {
+                postedBy: req.body.postedBy,
+                postedOn: req.body.postedOn,
+                content: req.body.content
+            };
+
+            data.blogData.addComment(req.params.id, comment)
+                .then(blog => {
+                    if (!blog) {
+                        res.status(400).json("Comments not added!");
+                    }
+                    res.status(200);
+
+                });
+        },
+
         listNewest(req, res) {
             data.blogData.sortByNewlyCreated()
                 .then(blogs => {

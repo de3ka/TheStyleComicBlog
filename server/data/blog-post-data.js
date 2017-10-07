@@ -53,6 +53,17 @@ module.exports = function(BlogPost) {
         });
     }
 
+    function addComment(id, comment) {
+        return new Promise((resolve, reject) => {
+            BlogPost.findOne({ _id: id })
+                .then(blog => {
+                    blog.comments.push(comment);
+                    blog.save();
+                    return resolve(blog);
+                });
+        }).catch((err) => reject(err));
+    }
+
     function sortByNewlyCreated() {
         let promise = new Promise((resolve, reject) => {
             BlogPost.find().sort({ 'postedOn': -1 })
@@ -138,6 +149,7 @@ module.exports = function(BlogPost) {
         create,
         getById,
         all,
+        addComment,
         sortByNewlyCreated,
         getCategoryByName,
         getSearchBlogsCategory,
