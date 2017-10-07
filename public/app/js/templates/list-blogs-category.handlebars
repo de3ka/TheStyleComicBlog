@@ -1,1 +1,23 @@
-<h1>Listing Works</h1>
+<div class="container-fluid">
+    <div class="row">
+        {{#blogs}}
+            <div class="col-xs-2">
+               {{#secondLarge @index}}
+                <div class="big-box">
+                {{else}}
+                <div class="box">
+                {{/secondLarge}}
+                    <div class="box-image" style="background-image: url({{image}})"></div>
+                    <p class="box-category">{{category}}</p>
+                    <p class="box-date">{{postedOn}}</p>
+                    <p class="box-subcategory">{{subcategory}}</p>
+                    <h2 class="box-title"><a href="#/blog/{{_id}}">{{title}}</a></h2>
+                    <p class="box-author">Posted by {{postedBy}}</p>
+                    <p class="box-content">{{article}}</p>
+                    <div class="box-bottom-border"></div>
+                </div>
+            </div>
+        {{/blogs}}
+    </div>
+</div>
+</div>
