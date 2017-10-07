@@ -37,7 +37,14 @@ module.exports = function(data) {
                     }
                     res.status(200).json({ blog });
                 }).catch((err) => res.status(500).json(err, "Blog not found"));
-        }
+        },
+
+        listNewest(req, res) {
+            data.blogData.sortByNewlyCreated()
+                .then(blogs => {
+                    res.status(200).json(blogs);
+                }).catch((err) => res.status(500).json(err, "Blogs not found"));
+        },
 
     };
 };

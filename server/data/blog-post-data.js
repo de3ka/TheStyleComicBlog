@@ -53,9 +53,25 @@ module.exports = function(BlogPost) {
             });
         });
     }
+
+    function sortByNewlyCreated() {
+        let promise = new Promise((resolve, reject) => {
+            BlogPost.find().sort({ 'postedOn': -1 })
+                .limit(10)
+                .exec((err, res) => {
+                    if (err) {
+                        return reject(err);
+                    }
+                    return resolve(res);
+                });
+        });
+        return promise;
+    }
+
     return {
         create,
         getById,
-        all
+        all,
+        sortByNewlyCreated
     };
 };
