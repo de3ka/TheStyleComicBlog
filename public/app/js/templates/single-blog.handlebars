@@ -1,0 +1,179 @@
+<ol class="breadcrumb p-l-6em">
+    <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">{{category}}</a></li>
+    <li class="breadcrumb-item active">{{title}}</li>
+</ol>
+<div class="post-wrappper">
+    <div class="row">
+        <div class="col-lg-12 col-xl-8 col-md-12 col-sm-12 col-xs-12">
+            <div class="small-device-wrap">
+                <div>
+                    <div class="box-top-border"></div>
+                    <div class="row current-box">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 zero-padding">
+                            <div class="padding-normalize col-xs-12 col-sm-4 col-md-12 col-lg-12 col-xl-12">
+                                <div class="current-box-image i-push-left">
+                                    <img src="{{image}}" alt="">
+                                    <div class="box-category">{{category}}</div>
+                                </div>
+                            </div>
+                            <div class="current-box-tags i-push-left d-xs-none col-sm-4 col-md-12 col-lg-12 col-xl-12">
+                                <div class="tags-wrapper col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12">
+                                    <h2>Tags</h2>
+                                    <ul clas="col-xl-12 col-lg-12">
+                                        {{#each tags}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                    <div class="clear-float"></div>
+                                </div>
+                            </div>
+                            <div class="current-box-related d-none d-lg-block d-xl-block">
+                                <div class="col-xl-11 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <h2>Related posts</h2>
+                                    <ul>
+                                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><span>asdasd</span></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="current-box-share col-sm-4 col-md-12 col-lg-12 col-xl-12 d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                <div class="col-xl-11 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                    <h2>Share this</h2>
+                                    <ul>
+                                        <li><a><img src="../../../assets/share-twitter.png" alt=""></a></li>
+                                        <li><a><img src="../../../assets/share-facebook.png" alt=""></a></li>
+                                        <li><a><img src="../../../assets/share-middle.png" alt=""></a></li>
+                                        <li><a><img src="../../../assets/share-digg.png" alt=""></a></li>
+                                        <li><a><img src="../../../assets/share-reddit.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="clear-float"></div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 content-box">
+                            <div class="content-wrap">
+                                <h2 class="blog-title">{{title}}</h2>
+                                <p class="blog-sub-title">POSTED BY {{postedBy}} IN {{category}} | Comments {{comments.length}}</p>
+                                <p class="article-content">{{article}}</p>
+                            </div>
+
+                        </div>
+                    <div class="box-bottom-border"></div>                        
+                    </div>
+                </div>
+                <div class="comments-wrap row">
+                    <div class="current-box-comments ml-auto col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                        <div class="box-top-border"></div>
+                        <div>
+                            <h2 class="box-title">{{comments.length}} Comments</h2>
+                        </div>
+                        <div class="comments-container">
+                            {{#if comments}} {{#comments}}
+                            <div class="comment">
+                                <div class="comment-data">
+                                    <img src="https://avatar.artofproblemsolving.com/avatar_362807.jpg?t=1501361955" alt="" class="comment-img">
+                                    <div class="comment-details">
+                                        <h2 class="comment-author">{{postedBy}}</h2>
+                                        <p class="comment-content">{{content}}</p>
+                                        <div class="reply-wrap d-flex justify-content-end">
+                                            <button class="reply-button">REPLY</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/comments}} {{else}}
+                            <h1>This article has no comments yet</h1>
+                            {{/if}}
+                        </div>
+                        <h2 class="purple-heading">Leave a comment</h2>
+                        <form id="leave-reply" class="comment-form" method="POST">
+                            <div class="form-group">
+                                <input type="text" placeholder="Email Address" id="leave-reply-email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Avatar URL" id="leave-reply-avatar">
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="8" placeholder="Message" id="leave-reply-text"></textarea>
+                            </div>
+                            <div class="button-wrap d-flex justify-content-end">
+                                <button type="submit" class="reply-button" id="leave-reply-submit" class="btn btn-default">SUBMIT</button>
+                            </div>
+                        </form>
+                        <div class="box-bottom-border"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-none d-xl-block col-lg-4">
+            <aside class="">
+                <div class="aside-post aside-box">
+                    <ul class="nav-ul">
+                        <li>
+                            <h2 class="aside-title">Recent</h2>
+                        </li>
+                        <li>
+                            <h2 class="aside-title">Popular</h2>
+                        </li>
+                        <li>
+                            <h2 class="aside-title">Random</h2>
+                        </li>
+                    </ul>
+                    <div class="aside-content">
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <img src="../../../assets/share-facebook.png" alt="">
+                            <div class="content-details">
+                                <h3 class="content-title">asdasd</h3>
+                                <p class="content-date">asdasdas</p>
+                            </div>
+                        </div>
+                        <div class="box-bottom-border"></div>
+                    </div>
+                </div>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Custom text widget</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
+                    </ul>
+                    <div class="box-bottom-border"></div>
+                </div>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Custom text widget</h2>
+                    <p class="text-content">Pesho gosho Toshooo Peshoo</p>
+                    <div class="box-bottom-border"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
