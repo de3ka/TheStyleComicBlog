@@ -207,6 +207,43 @@ nav .search-img {
 }
 
 
+/*DROPDOWN MENU BUTTONS*/
+
+#dropdownMenu1 {
+    background: transparent !important;
+}
+
+#dropdownMenu1:hover {
+    cursor: pointer;
+    color: #dcc08e;
+    background-color: #222222 !important;
+}
+
+.dropdown-menu {
+    background-color: #222222;
+}
+
+.dropdown-menu a {
+    color: white;
+}
+
+.dropdown-menu:hover a {
+    background-color: #222222;
+}
+
+.dropdown-item:hover {
+    color: #dcc08e;
+}
+
+.btn-xl {
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+/*END OF DROPDOWN MENU BUTTONS*/
+
+
 /*main {
     margin-top: 60px;
 }*/
