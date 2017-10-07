@@ -68,10 +68,22 @@ module.exports = function(BlogPost) {
         return promise;
     }
 
+    function getCategoryByName(subcategory, category) {
+        return new Promise((resolve, reject) => {
+            BlogPost.find({ subcategory: subcategory, category: category }, (err, blogs) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(blogs);
+            });
+        });
+    }
+
     return {
         create,
         getById,
         all,
-        sortByNewlyCreated
+        sortByNewlyCreated,
+        getCategoryByName
     };
 };

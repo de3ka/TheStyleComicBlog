@@ -46,5 +46,12 @@ module.exports = function(data) {
                 }).catch((err) => res.status(500).json(err, "Blogs not found"));
         },
 
+        listBlogsByCategoryByName(req, res) {
+            data.blogData.getCategoryByName(req.params.subcategory, req.params.category)
+                .then(blogs => {
+                    res.status(200).json(blogs);
+                }).catch((err) => res.status(500).json(err, "Blogs not found"));
+        },
+
     };
 };
