@@ -1,17 +1,12 @@
 /*globals Promise */
 "use strict";
-//const encryption = require("../utilities/encryption");
 
 module.exports = function(User) {
     function create(options) {
-        // let salt = encryption.generateSalt();
-        // let hashPass = encryption.generateHashedPassword(salt, options.password);
 
         let user = new User({
             username: options.username,
             password: options.password,
-            // salt: salt,
-            // hashPass: hashPass,
             email: options.email,
             avatar: options.avatar
         });
