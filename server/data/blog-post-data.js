@@ -138,7 +138,6 @@ module.exports = function(BlogPost) {
         create,
         getById,
         all,
-        addComment,
         sortByNewlyCreated,
         getCategoryByName,
         getSearchBlogsCategory,

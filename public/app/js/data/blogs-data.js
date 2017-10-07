@@ -2,8 +2,8 @@
 import requester from "../../../helpers/requester.js";
 
 export default {
-    all: function() {
-        return requester.get("/blogs");
+    all: function(page, size) {
+        return requester.get("/blogs?page=" + page + "&size=" + size);
     },
     byId: function(id) {
         return requester.get("/blogs/" + id).then(blog => {
