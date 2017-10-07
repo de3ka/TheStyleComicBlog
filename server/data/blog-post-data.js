@@ -102,13 +102,47 @@ module.exports = function(BlogPost) {
         });
     }
 
+    function allWithPagination(pageNumber = 0, pageSize = 10) {
+        const getPage = new Promise((resolve, reject) => {
+            BlogPost.find().sort({ 'postedOn': -1 })
+                .skip(pageNumber * pageSize)
+                .limit(pageSize)
+                .exec((err, blogs) => {
+                    if (err) {
+                        return reject(err);
+                    }
+
+                    return resolve(blogs);
+                });
+        });
+
+        const getCount = new Promise((resolve, reject) => {
+            BlogPost.count((err, size) => {
+                if (err) {
+                    return reject(err);
+                }
+
+                const pageCount = Math.ceil(size / pageSize);
+                return resolve(pageCount);
+            });
+        });
+
+        return Promise.all([
+            getPage,
+            getCount
+        ]);
+    }
+
+
     return {
         create,
         getById,
         all,
+        addComment,
         sortByNewlyCreated,
         getCategoryByName,
         getSearchBlogsCategory,
-        getSearchBlogsSubcategory
+        getSearchBlogsSubcategory,
+        allWithPagination
     };
 };

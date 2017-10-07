@@ -5,7 +5,7 @@ module.exports = function({ app, controller }) {
     let router = new Router();
 
     router
-        .get("/blogs", controller.blogController.getAll)
+        .get("/blogs", controller.blogController.getAllBlogsPagination)
         .get("/blogs/:id", controller.blogController.getById)
         .get("/blogs/:subcategory/:category", controller.blogController.listBlogsByCategoryByName)
         .get("/search/category/:category", controller.blogController.searchBlogsCategory)

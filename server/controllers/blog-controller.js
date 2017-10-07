@@ -67,5 +67,46 @@ module.exports = function(data) {
                 }).catch((err) => res.status(500).json(err, "Blogs not found"));
         },
 
+        getAllBlogsPagination(req, res) {
+            const page = +req.query.page || 0;
+            const size = +req.query.size || 10;
+
+            data.blogData.allWithPagination(page, size)
+                .then(([blogs, pageCount]) => {
+                    if (pageCount < page) {
+                        return res.redirect(`/blogs?page=${pageCount - 1}&size=${size}`);
+                    }
+
+                    let pageCountArr = [];
+                    let pagecountLength = +pageCount;
+                    for (let i = 1; i <= pagecountLength; i++) {
+                        pageCountArr.push(i);
+                    }
+
+                    const pagination = {
+                        active: +pageCount > 1,
+                        pageCount: pageCount,
+                        pageCountArray: [],
+                        pageSize: size,
+                        previous: {
+                            active: +page > 0,
+                            value: +page - 1
+                        },
+                        next: {
+                            active: +page < +pageCount - 1,
+                            value: +page + 1
+                        }
+                    };
+                    pagination.pageCountArray.push(...pageCountArr);
+
+                    return res.status(200).json({
+                        result: {
+                            blogs,
+                            pagination
+                        }
+                    });
+                }).catch((err) => res.status(500).json(err, "Blogs not found"));
+        }
+
     };
 };
