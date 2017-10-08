@@ -28,6 +28,9 @@ import notifier from "./helpers/notifier.js";
                 $("#create-post").show();
             });
         });
+        $(document).on("mouseout", ".dropdown-item", () => {
+            $(".dropdown-item").css("background-color", "#222222");
+        });
         $(document).on("click", ".register-click", () => {
             $("#create-post").show();
             $("#login").hide();
