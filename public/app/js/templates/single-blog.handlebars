@@ -17,17 +17,19 @@
                                     <div class="box-category">{{category}}</div>
                                 </div>
                             </div>
+                            {{#if tags}}
                             <div class="current-box-tags i-push-left d-xs-none col-sm-4 col-md-12 col-lg-12 col-xl-12">
                                 <div class="tags-wrapper col-xl-10 col-lg-10 col-md-11 col-sm-12 col-xs-12">
                                     <h2>Tags</h2>
                                     <ul clas="col-xl-12 col-lg-12">
                                         {{#each tags}}
-                                        <li>{{this}}</li>
+                                        <li><span>{{this}}</span></li>
                                         {{/each}}
                                     </ul>
                                     <div class="clear-float"></div>
                                 </div>
                             </div>
+                            {{/if}}
                             <div class="current-box-related d-none d-lg-block d-xl-block">
                                 <div class="col-xl-11 col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <h2>Related posts</h2>
@@ -63,7 +65,7 @@
                             </div>
 
                         </div>
-                    <div class="box-bottom-border"></div>                        
+                        <div class="box-bottom-border"></div>
                     </div>
                 </div>
                 <div class="comments-wrap row">

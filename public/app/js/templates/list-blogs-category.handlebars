@@ -1,12 +1,13 @@
 <div class="container-fluid">
-    <div class="row">
+    <div class="row boxes-container posts-container">
+    <div class="row col-lg-10">
         {{#blogs}}
-            <div class="col-xs-2">
-               {{#secondLarge @index}}
-                <div class="big-box">
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 box-wrapper">
+            {{#secondLarge @index}}
+            <div class="big-box col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
                 {{else}}
-                <div class="box">
-                {{/secondLarge}}
+                <div class="box col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                    {{/secondLarge}}
                     <div class="box-image" style="background-image: url({{image}})"></div>
                     <p class="box-category">{{category}}</p>
                     <p class="box-date">{{postedOn}}</p>
@@ -17,11 +18,12 @@
                     <div class="box-bottom-border"></div>
                 </div>
             </div>
-        {{/blogs}}
-    </div>
-    <div class="col-xs-2 float-right d-none d-lg-block">
-    <aside>
-        <div class="aside-widget aside-box">
+            {{/blogs}}
+        </div>
+        
+        <div class="col-lg-2 col-xl-2 d-none d-xl-block d-lg-block">
+            <aside>
+                <div class="aside-widget aside-box">
                     <h2 class="aside-title">Recent Comments</h2>
                     <ul>
                         <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
@@ -33,7 +35,7 @@
                     <div class="box-bottom-border"></div>
                 </div>
                 <div class="aside-widget aside-box">
-                   <h2 class="aside-title">Recent Comments</h2>
+                    <h2 class="aside-title">Recent Comments</h2>
                     <ul>
                         <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
                         <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
@@ -42,8 +44,9 @@
                         <li><img src="../../../assets/li-link.png" alt="" class="li-link">aasdas</li>
                     </ul>
                     <div class="box-bottom-border"></div>
-                </div> 
-    </aside>
+                </div>
+            </aside>
+        </div>
     </div>
-</div>
+    </div>
 </div>
