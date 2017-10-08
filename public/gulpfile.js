@@ -23,27 +23,9 @@ gulp.task("scripts", () => {
         .pipe(gulp.dest("dist/"));
 });
 
-gulp.task("sync", () => {
-    let files = [
-        "app/*.js",
-        "*.html",
-        "app/css/*.css"
-    ];
-    browserSync.init(files, {
-        proxy: "localhost:8001/"
-    });
-});
-
 gulp.task("clean", () => {
     gulp.src("dist", { read: false })
         .pipe(clean());
-});
-
-gulp.task("lint:sass", () => {
-    return gulp.src("app/sass/**/*.scss")
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
 });
 
 gulp.task("lint:js", () => {
@@ -53,19 +35,13 @@ gulp.task("lint:js", () => {
         .pipe(eslint.failOnError());
 });
 
-gulp.task("sass", () => {
-    return gulp.src("app/sass/**/.scss")
-        .pipe(sass())
-        .pipe(gulp.dest("app/css"));
-});
-
 gulp.task("css", () => {
     return gulp
         .src(["app/css/**/*.css"])
         .pipe(cleanCSS())
         .pipe(gulp.dest("dist/css"));
 });
-gulp.task("lint", ["lint:js", "lint:sass"]);
+gulp.task("lint", ["lint:js"]);
 
 gulp.task("build", gulpSync.sync(["clean", "scripts", "css"]));
 
