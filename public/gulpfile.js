@@ -5,40 +5,83 @@ let gulp = require("gulp"),
     minify = require("gulp-minify"),
     cleanCSS = require("gulp-clean-css"),
     babel = require("gulp-babel"),
-    eslint = require("gulp-eslint");
+    eslint = require("gulp-eslint"),
+    pump = require("pump"),
+    browserify = require("gulp-browserify"),
+    uglify = require("gulp-uglify");
 
-gulp.task("scripts", () => {
-    return gulp.src(["app/**/*.js", "helpers/*.js", "main.js", "!node_modules/**", "!bower_components/**"])
-        .pipe(babel({
-            presets: ["es2015"]
-        }))
-        .pipe(concat("all.js"))
-        .pipe(minify())
-        .pipe(gulp.dest("dist/"));
+
+gulp.task("compileControllers:js", () => {
+    return gulp.src(["./app/js/controllers/*.js",
+            "!node_modules/**",
+            "!bower_components/**"
+        ])
+        .pipe(babel({ presets: ["es2015"] }))
+        .pipe(gulp.dest("./tmp/js/controllers"));
 });
 
-gulp.task("clean", () => {
-    gulp.src("dist", { read: false })
-        .pipe(clean());
+gulp.task("compileData:js", () => {
+    return gulp.src(["./app/js/data/*.js",
+            "!node_modules/**",
+            "!bower_components/**"
+        ])
+        .pipe(babel({ presets: ["es2015"] }))
+        .pipe(gulp.dest("./tmp/js/data"));
 });
 
-gulp.task("lint:js", () => {
-    return gulp.src(["app/**/*.js", "!node_modules/**", "!bower_components/**", "!build/**", "!dist/**"])
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failOnError());
+gulp.task("compileHelpers:js", () => {
+    return gulp.src(["helpers/*.js",
+            "!node_modules/**",
+            "!bower_components/**"
+        ])
+        .pipe(babel({ presets: ["es2015"] }))
+        .pipe(gulp.dest("./tmp/js/helpers"));
 });
 
-gulp.task("css", () => {
-    return gulp
-        .src(["app/css/**/*.css"])
-        .pipe(cleanCSS())
+gulp.task("compileMain:js", () => {
+    return gulp.src(["main.js",
+            "!node_modules/**",
+            "!bower_components/**"
+        ])
+        .pipe(babel({ presets: ["es2015"] }))
+        .pipe(gulp.dest("./tmp"));
+});
+
+gulp.task("minify:css", () => {
+    return gulp.src(["./app/css/*.css"])
+        .pipe(cleanCSS({ compatibility: "ie8" }))
         .pipe(gulp.dest("dist/css"));
 });
-gulp.task("lint", ["lint:js"]);
 
-gulp.task("build", gulpSync.sync(["clean", "scripts", "css"]));
-
-gulp.task("default", () => {
-    gulp.start("build");
+gulp.task("minifyControllers:js", ["compileControllers:js"], () => {
+    return pump([
+        gulp.src("./tmp/js/controllers/*.js"),
+        uglify(),
+        gulp.dest("./dist/app/js/controllers")
+    ]);
 });
+
+gulp.task("minifyData:js", ["compileData:js"], () => {
+    return pump([
+        gulp.src("./tmp/js/data/*.js"),
+        uglify(),
+        gulp.dest("./dist/app/js/data")
+    ]);
+});
+gulp.task("minifyHelpers:js", ["compileHelpers:js"], () => {
+    return pump([
+        gulp.src("./tmp/js/helpers/*.js"),
+        uglify(),
+        gulp.dest("./dist/helpers")
+    ]);
+});
+
+gulp.task("minifyMain:js", ["compileMain:js"], () => {
+    return pump([
+        gulp.src("./tmp/*.js"),
+        uglify(),
+        gulp.dest("./dist")
+    ]);
+});
+
+gulp.task("build", ["minify:css", "minifyControllers:js", "minifyData:js", "minifyHelpers:js", "minifyMain:js"], () => {});
