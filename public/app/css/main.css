@@ -81,21 +81,10 @@ label {
     margin-left: 65px;
 }
 
-
-/* .boxes-container {
-    margin-left: 60px;
-} */
-
 .boxes-container .box-wrapper {
     padding-left: 1em;
     padding-bottom: 1em;
 }
-
-
-/* .box-wrapper{
-	flex:0 0 20%;
-	max-width: 20%;
-} */
 
 .box-wrapper:nth-of-type(2) {
     flex: 0 0 33.3%;
@@ -117,25 +106,7 @@ label {
     background-color: #000;
 }
 
-
-/*header {
-    margin-top: 125px;
-}*/
-
-
-/*nav ul {
-    position: relative;
-    width: 100%;
-    margin-top: 30px;
-    margin-left: 25px;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}*/
-
 nav ul li {
-    /* padding-left: 20px; */
     font-size: 1.84rem;
     text-transform: uppercase;
     color: #ffffff;
@@ -194,7 +165,6 @@ nav ul li:last-of-type {
     position: absolute;
     right: 83px;
     font-style: italic;
-    /*margin-left: 300px;*/
 }
 
 nav input[type="text"] {
@@ -262,18 +232,10 @@ nav .search-img {
 /*END OF DROPDOWN MENU BUTTONS*/
 
 
-/*main {
-    margin-top: 60px;
-}*/
-
-
 /*BLOGS  */
 
 .box {
-    /* margin-left: 26px; */
-    /* margin-bottom: 25px; */
     position: relative;
-    /* max-width: 230px; */
     overflow: hidden;
     height: 360px;
     background: #ffffff;
@@ -281,10 +243,7 @@ nav .search-img {
 }
 
 .big-box {
-    /* margin-left: 26px; */
-    /* margin-bottom: 25px; */
     position: relative;
-    /* max-width: 486px; */
     overflow: hidden;
     height: 360px;
     background: #ffffff;
@@ -297,7 +256,6 @@ nav .search-img {
     top: 3px;
     left: 3px;
     right: 3px;
-    /* max-width: 224px; */
     height: 180px;
     font-family: sans-serif;
     font-size: 40px;
@@ -312,7 +270,6 @@ nav .search-img {
     top: 3px;
     left: 3px;
     right: 3px;
-    /* max-width: 480px; */
     height: 180px;
     font-family: sans-serif;
     font-size: 40px;
@@ -342,7 +299,6 @@ nav .search-img {
     background: transparent;
     color: #ffffff;
     text-shadow: 2px 2px 4px black;
-    /* text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;*/
 }
 
 .box-title {
@@ -383,8 +339,7 @@ nav .search-img {
 
 .box-bottom-border {
     background: repeating-linear-gradient( -45deg, #cbcbcb, #cbcbcb 1px, #ffffff 1px, #ffffff 4px);
-    /* position: absolute;  */
-    bottom: 10px;
+    bottom: 1px;
     left: 0;
     width: 100%;
     height: 9px;
@@ -489,12 +444,6 @@ nav .search-img {
     margin-left: 85px;
 }
 
-
-/* .post-wrapper>.row> [class^="col-"], [class*=" col-"]{
-    padding-left:0;
-    padding-right: 0;
-} */
-
 .zero-padding {
     padding-left: 0;
     padding-right: 0;
@@ -517,11 +466,6 @@ nav .search-img {
     max-width: 228px;
 }
 
-
-/* .current-box .i-push-left {
-    margin-left: 32px;
-} */
-
 .current-box .zero-padding,
 .current-box .content-box {
     padding-bottom: 10em;
@@ -529,9 +473,7 @@ nav .search-img {
 
 .current-box-image {
     position: relative;
-    /* margin-top: 25px; */
     margin-bottom: 25px;
-    /* left: 32px; */
     border: 5px solid #eeeeee;
     width: 186px;
     height: 186px;
@@ -583,12 +525,6 @@ nav .search-img {
     margin-left: 0;
 }
 
-
-/* .current-box-related, .current-box-share {
-    margin-top: 25px;
-    margin-left:32px;
-} */
-
 .current-box-related>div {
     padding-left: 2.5em;
     padding-top: 1.5em;
@@ -611,7 +547,6 @@ nav .search-img {
 .li-link {
     width: 10px;
     height: 5px;
-    /* margin-left: 29px; */
 }
 
 .current-box-share ul {
@@ -687,10 +622,6 @@ nav .search-img {
 .current-box-comments {
     padding: 10px 0px 0 0;
     background-color: #ffffff;
-    /* position: relative; */
-    /* margin-left: 228px; */
-    /* margin-top: 16px; */
-    /* width: 972px; */
     box-shadow: 2px 2px 4px black;
 }
 
@@ -720,14 +651,6 @@ nav .search-img {
     margin-right: 36px;
 }
 
-.subcomments .comment {
-    border: 0;
-}
-
-.subcomments .comment-data {
-    margin-right: 0;
-}
-
 .comment .subcomments {
     margin-top: -50px;
     margin-left: 50px;
@@ -754,7 +677,6 @@ nav .search-img {
     font-family: DroidSans;
     font-size: 13px;
     color: #8b8787;
-    /* margin-bottom: 50px; */
 }
 
 .reply-wrap {
@@ -803,15 +725,19 @@ nav .search-img {
     color: #7e426d;
 }
 
+#small-image {
+    padding: 1px;
+    border: 3px solid #d6d6d6;
+    background-color: #d6d6d6;
+}
+
+#widget-anchor {
+    text-decoration: none;
+    color: #8b8787
+}
+
 
 /*SINGLE BLOG POST SIDE MENU*/
-
-
-/* aside {
-    float: left;
-    margin-right: 64px;
-    padding-left: 15px;
-} */
 
 aside ul {
     list-style-type: none;
@@ -928,8 +854,6 @@ aside .nav-ul li {
 footer {
     bottom: 0;
     border-top: 1px solid #474747;
-    /* height: 415px; */
-    /* background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #323232 50%, #313131 79%, #1d1d1d 100%); */
     background: repeating-linear-gradient(to right, #1d1d1d 0%, #313131 21%, #212121 50%, #313131 79%, #1d1d1d 100%);
 }
 
@@ -941,11 +865,6 @@ footer .container-fluid {
     padding-top: 3.849em;
     margin: 0;
 }
-
-
-/*footer ul li {
-    margin-bottom: 11px;
-}*/
 
 footer ul a {
     color: #d1d1d1;
@@ -977,14 +896,6 @@ footer ul a:hover {
     text-shadow: 2px 2px 4px black;
 }
 
-
-/*.footer-section {
-    margin-left: 190px;
-    margin-top: 50px;
-    width: 100%;
-    padding: 0;
-}*/
-
 .footer-section .section-title {
     font-size: 30px;
     text-transform: uppercase;
@@ -1010,13 +921,6 @@ footer ul li img {
 }
 
 
-/*footer ul li img {
-    width: 9px;
-    height: 9px;
-    margin-right: 11px;
-}*/
-
-
 /*FORMS  */
 
 .page-form {
@@ -1040,7 +944,7 @@ footer ul li img {
 }
 
 
-/*  MEDIA QUERIES*/
+/*  MEDIA QUERIES */
 
 @media only screen and (min-width: 320px) and (max-width: 576px) {
     .container-fluid {
@@ -1053,7 +957,7 @@ footer ul li img {
     .navbar {
         padding-left: 1em;
     }
-    /*HOME  */
+    /* HOME  */
     .boxes-container {
         margin: 0;
     }
@@ -1069,9 +973,7 @@ footer ul li img {
     }
     .current-box-image {
         position: relative;
-        /* margin-top: 25px; */
         margin-bottom: 25px;
-        /* left: 32px; */
         border: 5px solid #eeeeee;
         width: 100%;
         height: 300px;
@@ -1198,11 +1100,3 @@ footer ul li img {
         max-width: 50%;
     }
 }
-
-
-/* @media only screen and (min-width: 1200px) and (max-width: 1520px){
-	.box-wrapper:nth-of-type(2){
-		flex: 0 0 30%;
-		max-width: 30%;
-	}
-} */
