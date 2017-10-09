@@ -1,13 +1,7 @@
 let gulp = require("gulp"),
-    gulpSync = require("gulp-sync")(gulp),
-    clean = require("gulp-clean"),
-    concat = require("gulp-concat"),
-    minify = require("gulp-minify"),
     cleanCSS = require("gulp-clean-css"),
     babel = require("gulp-babel"),
-    eslint = require("gulp-eslint"),
     pump = require("pump"),
-    browserify = require("gulp-browserify"),
     uglify = require("gulp-uglify");
 
 
