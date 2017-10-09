@@ -11,4 +11,4 @@ const controller = require("./server/controllers/index")(data);
 
 require("./server/routers/router")({ app, data, controller });
 
-app.listen(config.port, () => console.log(`Server running at http://localhost:${config.port}`));
+app.listen(config.port || 8001, () => console.log(`Server running at http://localhost:${config.port ||8001}`));

@@ -1,6 +1,7 @@
 //const connectionString = "mongodb://localhost:27017/blog",
 const connectionString = "mongodb://sashkaVaseva:comicheaven@ds147544.mlab.com:47544/comicblog"
-port = 8001,
+    //port = 8001,
+port = process.env.PORT,
     // console.log(port);
     path = require("path"),
     rootPath = path.normalize(__dirname + "/../..");
