@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("jquery"),require("amaran"),exports.default={send:function(e){$.amaran({message:e,position:"top right",delay:5e3})},explain:function(e,t,a){$.amaran({theme:"awesome "+a||"",content:{title:e||"",message:t,info:""},position:"top right",delay:5e3})}};

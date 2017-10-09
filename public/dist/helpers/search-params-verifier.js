@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={searchparamsCategory:function(e){return"DC"===e||"dc"===e||"Marvel"===e||"marvel"===e||"Image"===e||"image"===e||"Darkhorse"===e||"darkhorse"===e},capitalizeFirst:function(e){return e.charAt(0).toUpperCase()+e.slice(1)},capitalizeFirstTwo:function(e){return e.toUpperCase()}};

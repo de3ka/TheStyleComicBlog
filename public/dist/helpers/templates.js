@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),require("jquery");var handlebars=window.handlebars||window.Handlebars;exports.default={load:function(e){var r="../app/js/templates/"+e+".handlebars";return new Promise(function(e,a){$.ajax({url:r,success:function(r){e(handlebars.compile(r))},error:function(e){a(e)}})})}};

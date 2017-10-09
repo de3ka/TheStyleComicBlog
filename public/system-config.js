@@ -8,6 +8,7 @@ SystemJS.config({
         "jquery": "./bower_components/jquery/dist/jquery.min.js",
         "amaran": "./bower_components/AmaranJS/dist/js/jquery.amaran.min.js",
         "sha1": "./node_modules/sha1/sha1.js",
-        "main": "./main.js"
+        // "main": "./dist/all-min.js"
+        "main": "./dist/main.js"
     }
 });

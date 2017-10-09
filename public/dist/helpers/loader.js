@@ -1,0 +1,1 @@
+"use strict";require("jquery"),$(document).ready(function(){$(".loader").fadeOut("slow")});

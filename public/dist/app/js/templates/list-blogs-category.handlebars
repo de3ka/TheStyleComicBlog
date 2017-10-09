@@ -1,0 +1,55 @@
+<ol class="breadcrumb p-l-6em">
+    <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+    <li class="breadcrumb-item"><a href="#"></a>{{blogs.[0].subcategory}}</li>
+    <li class="breadcrumb-item active">{{blogs.[0].category}}</li>
+</ol>
+<div class="container-fluid">
+    <div class="row boxes-container posts-container">
+    <div class="row col-lg-10">
+        {{#blogs}}
+        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 box-wrapper">
+            {{#secondLarge @index}}
+            <div class="big-box col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                {{else}}
+                <div class="box col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                    {{/secondLarge}}
+                    <div class="box-image" style="background-image: url({{image}})"></div>
+                    <p class="box-category">{{category}}</p>
+                    <p class="box-date">{{postedOn}}</p>
+                    <p class="box-subcategory">{{subcategory}}</p>
+                    <h2 class="box-title"><a href="#/blog/{{_id}}">{{title}}</a></h2>
+                    <p class="box-author">Posted by {{postedBy}}</p>
+                    <p class="box-content">{{article}}</p>
+                    <div class="box-bottom-border1"></div>
+                </div>
+            </div>
+            {{/blogs}}
+        </div>
+        
+        <div class="col-lg-2 col-xl-2 d-none d-xl-block d-lg-block">
+            <aside>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Browse Comics</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Comics/Marvel">Marvel</a></li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Comics/DC">DC</a></li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Comics/Image">Image</a></li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Comics/Darkhorse">Darkhorse</a></li>
+                    </ul>
+                    <div class="box-bottom-border1"></div>
+                </div>
+                <div class="aside-widget aside-box">
+                    <h2 class="aside-title">Browse Novels</h2>
+                    <ul>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Graphic%20Novels/Marvel">Marvel</a></li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Graphic%20Novels/DC">DC</a></li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Graphic%20Novels/Image">Image</li>
+                        <li><img src="../../../assets/li-link.png" alt="" class="li-link"><a id="widget-anchor" href="#/blogs/Graphic%20Novels/Darkhorse">Darkhorse</a></li>
+                    </ul>
+                    <div class="box-bottom-border1"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    </div>
+</div>
