@@ -1,5 +1,5 @@
 # TheStyle Comic Blog
-  - Online blog type site for comic reviews. Fast and easy way to read about your favorite issues, post comments about a particilar review and create your own review.
+  - Online blog type site for comic reviews. Fast and easy way to read about your favorite issues, post comments about a particular review and create your own review.
 -----------------------------------------------------------------------------------------------------------------------
 
 ## Web front-end development
@@ -7,13 +7,11 @@
 ### Front End
 - Handlebars
 - JQuery
-- Navigo
-- Systen.js
+- Sammy
+- System.js
 
 ### Back End
-- Babel
 - Express
-- Gulp
 - MongoDB
 - Node.js
 
@@ -41,7 +39,7 @@
 - **POST** -> /login
 - **POST** -> /logout
 
-## 4. Getting started
+## Getting started
 Clone the repository and then run:
 ```
 npm install
