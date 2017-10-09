@@ -1,17 +1,11 @@
 let gulp = require("gulp"),
     gulpSync = require("gulp-sync")(gulp),
-    browserSync = require("browser-sync").create(),
-    sass = require("sass"),
     clean = require("gulp-clean"),
     concat = require("gulp-concat"),
-    rename = require("gulp-rename"),
     minify = require("gulp-minify"),
     cleanCSS = require("gulp-clean-css"),
     babel = require("gulp-babel"),
-    babelify = require("babelify"),
-    browserify = require("browserify"),
-    eslint = require("gulp-eslint"),
-    sassLint = require("gulp-sass-lint");
+    eslint = require("gulp-eslint");
 
 gulp.task("scripts", () => {
     return gulp.src(["app/**/*.js", "helpers/*.js", "main.js", "!node_modules/**", "!bower_components/**"])
